@@ -1,0 +1,221 @@
+/*buenas prácticas de programacion*/
+*{
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0px;
+}
+
+.navbar, .navbar-expand-lg, .navbar-light, .bg-light,.navbar-brand{
+  margin-top: 0px;
+  font-size: 25px;
+}
+
+/*le damos color con un degrado al menu*/
+.nav-extended{
+  background: rgb(56, 213, 86);
+  background: linear-gradient(
+    90deg,
+    rgba(56, 213, 86, 1) 9%,
+    rgb(140, 189, 178) 57%,
+    rgba(0, 212, 255, 1) 96%
+  );
+}
+
+.navbar, .navbar-expand-lg {
+  background: rgb(56, 213, 86);
+  background: linear-gradient(
+    90deg,
+    rgba(56, 213, 86, 1) 9%,
+    rgb(140, 189, 178) 57%,
+    rgba(0, 212, 255, 1) 96%
+  );
+}
+
+/*alineamos el titulo*/
+.titulo2{
+  text-align: center;
+  margin-top: 50px;
+}
+
+/*loe damos margenes a las imagenes*/
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/*modificamos el index en este vamos a darle las formas*/
+.catalogo {
+  width: 100%;
+  max-width: 1900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  margin-bottom: 100px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 133px);
+  grid-auto-rows: 200px;
+  justify-content: center;
+  gap: 1rem;
+}
+
+
+/*le damos forma de pentagono */
+.img {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);/*las dimenciones del pentagono*/
+  grid-column: span 2; /*la suma de 133*2 + 1rem que equivalen 17px = 283*/
+  height: 283px;
+  transition: 1.0s filter;
+}
+
+
+.img:hover{
+  filter: brightness(0.3);/*le da una sombra cuando coloca el cursor*/
+}
+
+.img:first-of-type{
+  grid-column: 2 / span 2; /*se ubica en la fila 2 y abarca dos espacios*/ 
+}
+
+.img:last-of-type{
+  grid-column: 6 / span 2;/*se ubica en la fila 6 y abarca dos espacios*/ 
+}
+
+.bg-light, .text-center, .text-lg-start{
+margin-top: 50px;
+}
+
+
+/*media queries*/
+
+@media screen and (min-width: 270px) and (max-width: 504px){
+
+  .img:first-of-type{
+    grid-column: 1 / span 2;
+  }
+  .catalogo{
+    grid-auto-rows: 283px;
+  }
+  
+}
+
+
+@media screen and (min-width: 536px) and (max-width: 504px){
+
+  .img:first-of-type(odd){
+    grid-column: 2 / span 2;
+  } 
+  
+}
+
+@media screen and (min-width: 683px) and (max-width: 862px){
+
+  .img :nth-of-type(3n + 1){
+    grid-column: 2 / span 2;
+  } 
+  
+}
+
+@media screen and (min-width: 863px) and (max-width: 1038spx){
+
+  .img :nth-of-type(4n + 1){
+    grid-column: 2 / span 2;
+  } 
+  
+}
+
+@media screen and (min-width: 1039px) and (max-width: 1093spx){
+
+  .img :nth-of-type(5n + 1){
+    grid-column: 2 / span 2;
+  } 
+  
+}
+
+
+/*--------------------------------------------------------------*/
+/*le damos propiedades a la imagen en las secciones*/
+.contenedor {
+  width: 95%;
+  max-width: 2000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  margin-bottom: 50px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  grid-auto-rows: 500px;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.img1 {
+  grid-column: span 2; /*la suma de 133*2 + 1rem que equivalen 17px = 283*/
+  height: 417px;
+}
+
+
+.titulo{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.encargar{
+  margin-top: 300px;
+  text-align: center;
+}
+
+@media screen and (min-width: 270px) and (max-width: 504px){
+
+  .img1:first-of-type{
+    grid-column: 1 / span 2;
+  }
+  .contenido{
+    grid-auto-rows: 283px;
+  }
+  
+}
+
+
+@media screen and (min-width: 536px) and (max-width: 504px){
+
+  .img1:first-of-type(odd){
+    grid-column: 1 / span 1;
+  } 
+  
+}
+
+@media screen and (min-width: 683px) and (max-width: 862px){
+
+  .img1 :nth-of-type(3n + 1){
+    grid-column: 1 / span 1;
+  } 
+  
+}
+
+@media screen and (min-width: 863px) and (max-width: 1038spx){
+
+  .img1 :nth-of-type(4n + 1){
+    grid-column: 1 / span 1;
+  } 
+  
+}
+
+@media screen and (min-width: 1039px) and (max-width: 1093spx){
+
+  .img1 :nth-of-type(5n + 1){
+    grid-column: 1 / span 1;
+  } 
+}
+
+
+
+
+

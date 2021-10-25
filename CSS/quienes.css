@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+}
+.nav-extended {
+  background: rgb(56, 213, 86);
+  background: linear-gradient(
+    90deg,
+    rgba(56, 213, 86, 1) 9%,
+    rgb(140, 189, 178) 57%,
+    rgba(0, 212, 255, 1) 96%
+  );
+}
+
+.navbar,
+.navbar-expand-lg {
+  background: rgb(56, 213, 86);
+  background: linear-gradient(
+    90deg,
+    rgba(56, 213, 86, 1) 9%,
+    rgb(140, 189, 178) 57%,
+    rgba(0, 212, 255, 1) 96%
+  );
+}
+
+/*aquí modificamos en la página de quienes somos*/
+
+.quien {
+  width: 100%;
+  max-width: 1500px;
+  margin: 10px auto;
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: repeat(
+    2,
+    auto
+  ); /*indicamos cuantas columna y el tamaño de 1 fraccion*/
+  grid-template-rows: repeat(
+    5,
+    auto
+  ); /* hacemos 5 filas con la medida automatica*/
+
+  /*acomodamos y indicamos como va a ir las partes de la paginas */
+  grid-template-areas:
+    "mision   mision "
+    "vision   vision "
+    "porque  porque "
+    "porque   porque "
+    "footer3  footer3 ";
+}
+
+/*modificamos cada parte*/
+.quien .mision {
+  grid-area: mision;
+  padding-top: 50px;
+  background-color: lemonchiffon;
+  border: khaki 2px solid;
+  padding-left: 50px;
+  margin-top: 20px;
+  text-align: left;
+  overflow: auto;
+
+  box-shadow: 10px 10px rgb(251, 223, 129);
+  border-top-left-radius: 100px 40px; /*borde eliptico*/
+}
+
+.quien .vision {
+  grid-area: vision;
+  padding-top: 50px;
+  background-color: lemonchiffon;
+  border: khaki 2px solid;
+  padding-left: 50px;
+ 
+  text-align: left;
+  overflow: auto;
+
+  box-shadow: 10px 10px rgb(251, 223, 129);
+  border-top-right-radius: 100px 40px; /*borde eliptico*/
+}
+
+.quien .porque {
+  grid-area: porque;
+  background-color: cornsilk;
+  border: solid bisque;
+  padding-left: 50px;
+  padding-top: 20px;
+}
+
+.quien .footer3 {
+  grid-area: footer3;
+  color: white;
+  background-color: black;
+  text-align: end;
+}
+
+
+@media screen and (max-width: 768px){
+	.quien {
+		grid-template-areas: "mision   mision "
+        "vision   vision "
+        "porque  porque "
+        "porque   porque "
+        "footer3  footer3 ";
+	}
+}
